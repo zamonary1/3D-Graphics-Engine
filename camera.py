@@ -7,18 +7,11 @@ NEAR = 0.1
 FAR = 100
 SPEED = 0.005
 SENSITIVITY = 0.04
-DEAD_ZONE = 0.15
+DEAD_ZONE = 0.15 #only for joystick
 
 pygame.init()
 my_joystick = pygame.joystick.Joystick(0)
 my_joystick.init()
-# pygame.joystick.Joystick(0).init()
-# ljoy = pygame.joystick.Joystick(0)
-# ljx=ljoy.get_axis(0)
-# ljy=ljoy.get_axis(1)
-# rjx=ljoy.get_axis(2)
-# rjy=ljoy.get_axis(3)
-# clock=pygame.time.Clock()
 
 print(pygame.joystick.get_count())
 
