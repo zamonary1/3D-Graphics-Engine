@@ -1,13 +1,26 @@
-import pygame as pg
-import moderngl as mgl
-import sys
-from model import *
-from camera import Camera
-from light import Light
-from mesh import Mesh
-from scene import Scene
-from scene_renderer import SceneRenderer
-
+try:
+    import pygame as pg
+    import moderngl as mgl
+    import sys
+    from model import *
+    from camera import *
+    from light import Light
+    from mesh import Mesh
+    from scene import Scene
+    from scene_renderer import SceneRenderer
+except ModuleNotFoundError: #if one of modules is not installed
+    print("Some of the modules is not found. Trying to install them.")
+    import os
+    os.system('pip install -r requirements.txt') #install requirements with pip and try to import all libs again
+    import pygame as pg
+    import moderngl as mgl
+    import sys
+    from model import *
+    from camera import *
+    from light import Light
+    from mesh import Mesh
+    from scene import Scene
+    from scene_renderer import SceneRenderer
 
 class GraphicsEngine:
     def __init__(self, win_size=(1600, 900)):
